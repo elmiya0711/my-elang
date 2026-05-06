@@ -8,7 +8,7 @@ from colorama import Fore, init
 init(autoreset=True)
 
 def banner():
-    print(Fore.MAGENTA + r''' 
+ print(Fore.MAGENTA + r'''''
  
 ,---.    ,---.   ____     __             .-''-.    .---.        ____    ,---.   .--.  .-_'''-.    
 |    \  /    |   \   \   /  /          .'_ _   \   | ,_|      .'  __ `. |    \  |  | '_( )_   \   
